@@ -482,7 +482,7 @@ export default function App() {
             <div className="contact-content-inner">
               <h2 className="contact-title">Let's build something together</h2>
               <p className="contact-desc text-inter">
-                I am currently open to internships, full-time positions, and freelance opportunities. Drop a message or email me directly at <a href="mailto:keanago13@gmail.com" className="email-link">keanago13@gmail.com</a>.
+                I am currently open to internships, full-time positions, and freelance opportunities. Drop a message or email me directly at <a href="mailto:laragakeanasamantha@gmail.com" className="email-link">laragakeanasamantha@gmail.com</a>.
               </p>
 
               <form className="contact-form" onSubmit={handleContactSubmit}>
