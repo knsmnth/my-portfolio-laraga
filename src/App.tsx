@@ -102,7 +102,7 @@ export default function App() {
     },
     {
       id: 3,
-      title: "pasalobong management system - POS System",
+      title: "Pasalobong Management System - POS System",
       category: "POS SYSTEM",
       description: "Designed and implemented a comprehensive POS system for VSU's local products, featuring real-time inventory tracking and an intuitive user interface for highly efficient sales management.",
       tags: ["React", "Electron", "SQLite"],
