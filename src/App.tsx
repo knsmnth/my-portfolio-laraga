@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import classifiberImg from './assets/img/classifiber-image.png';
+import fleetImg from './assets/img/fleet-management-log-image.png';
+import profileImg from './assets/img/profile-picture-laraga.jfif';
+import vsuImg from './assets/img/vsu-infirmary-image.png';
 
 interface Project {
   id: number;
@@ -10,6 +14,7 @@ interface Project {
   tagClasses: string[];
   gradient: string;
   icon: string;
+  image?: string;
 }
 
 interface TimelineItem {
@@ -80,7 +85,8 @@ export default function App() {
       tags: ["React Native", "TensorFlow Lite", "UI Design"],
       tagClasses: ["tag-green", "tag-blue", "tag-darkgreen"],
       gradient: "linear-gradient(135deg, #114B71, #2B694D)",
-      icon: "📱"
+      icon: "📱",
+      image: classifiberImg
     },
     {
       id: 2,
@@ -90,7 +96,8 @@ export default function App() {
       tags: ["React", "Node.js", "PostgreSQL"],
       tagClasses: ["tag-green", "tag-blue", "tag-darkgreen"],
       gradient: "linear-gradient(135deg, #0F5238, #114B71)",
-      icon: "🏥"
+      icon: "🏥",
+      image: vsuImg
     },
     {
       id: 3,
@@ -104,13 +111,14 @@ export default function App() {
     },
     {
       id: 4,
-      title: "Modern E-commerce Platform",
+      title: "Fleet Maintenance Log",
       category: "WEB APPLICATION",
-      description: "A premium e-commerce platform built with focus on conversion rate optimization, lightning fast page loads, and elegant animations.",
-      tags: ["Next.js", "Stripe API", "CSS Modules"],
+      description: "A comprehensive digital log system designed to monitor vehicle statuses, track service histories, and organize preventative maintenance schedules.",
+      tags: ["React", "Node.js", "Express", "SQLite"],
       tagClasses: ["tag-green", "tag-blue", "tag-darkgreen"],
       gradient: "linear-gradient(135deg, #2D6A4F, #1b4332)",
-      icon: "🛒"
+      icon: "🚚",
+      image: fleetImg
     }
   ];
 
@@ -301,34 +309,8 @@ export default function App() {
             <div className="image-wrapper">
               <div className="image-overlay"></div>
               
-              {/* Premium abstract SVG profile graphic to replace placeholder */}
-              <svg className="hero-svg-avatar" viewBox="0 0 576 576" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#0F5238" />
-                    <stop offset="50%" stopColor="#2B694D" />
-                    <stop offset="100%" stopColor="#B0F1CC" />
-                  </linearGradient>
-                  <linearGradient id="bgGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#F3F4F0" />
-                    <stop offset="100%" stopColor="#EDEEEA" />
-                  </linearGradient>
-                  <clipPath id="avatarClip">
-                    <rect width="576" height="576" rx="48" />
-                  </clipPath>
-                </defs>
-                <g clipPath="url(#avatarClip)">
-                  <rect width="576" height="576" fill="url(#bgGrad)" />
-                  <circle cx="288" cy="288" r="220" fill="url(#avatarGrad)" opacity="0.15" />
-                  <circle cx="288" cy="288" r="160" fill="url(#avatarGrad)" opacity="0.3" />
-                  {/* Styled abstract silhouette/representation of a builder */}
-                  <path d="M288 160 C230 160 210 200 210 250 C210 300 230 330 288 330 C346 330 366 300 366 250 C366 200 346 160 288 160 Z" fill="url(#avatarGrad)" />
-                  <path d="M160 490 C160 410 210 370 288 370 C366 370 416 410 416 490" stroke="url(#avatarGrad)" strokeWidth="32" strokeLinecap="round" />
-                  <path d="M120 440 L456 440" stroke="#FFFFFF" strokeWidth="4" strokeDasharray="16 16" opacity="0.5" />
-                  <circle cx="160" cy="160" r="12" fill="#B0F1CC" />
-                  <circle cx="420" cy="380" r="8" fill="#2B694D" />
-                </g>
-              </svg>
+              {/* Premium profile photo */}
+              <img src={profileImg} className="hero-svg-avatar" alt="Keana Laraga Profile" style={{ objectFit: 'cover' }} />
               
               {/* Floating decorative element from Figma */}
               <div className="floating-card">
@@ -370,9 +352,13 @@ export default function App() {
           <div className="projects-grid">
             {projects.map((project) => (
               <article key={project.id} className="project-card">
-                <div className="project-image-container" style={{ background: project.gradient }}>
+                <div className="project-image-container" style={{ background: project.image ? undefined : project.gradient }}>
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} className="project-image" />
+                  ) : (
+                    <div className="project-icon-placeholder">{project.icon}</div>
+                  )}
                   <div className="project-image-overlay"></div>
-                  <div className="project-icon-placeholder">{project.icon}</div>
                   <span className="project-badge badge-geist">{project.category}</span>
                 </div>
                 
