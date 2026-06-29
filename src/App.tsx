@@ -151,8 +151,8 @@ export default function App() {
     {
       id: 2,
       degree: "Secondary Education",
-      institution: "Regional Science High School",
-      period: "2016 - 2022"
+      institution: "The College of Maasin",
+      period: "2013 - 2019"
     }
   ];
 
