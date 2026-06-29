@@ -4,6 +4,7 @@ import classifiberImg from './assets/img/classifiber-image.png';
 import fleetImg from './assets/img/fleet-management-log-image.png';
 import profileImg from './assets/img/profile-picture-laraga.jfif';
 import vsuImg from './assets/img/vsu-infirmary-image.png';
+import pcbmsImg from './assets/img/PCBMS-image.png';
 
 interface Project {
   id: number;
@@ -101,13 +102,14 @@ export default function App() {
     },
     {
       id: 3,
-      title: "Enterprise POS System",
-      category: "DESKTOP APP",
-      description: "A high-performance offline-first Point of Sale system for retail operations, featuring real-time inventory tracking and analytics.",
+      title: "pasalobong management system - POS System",
+      category: "POS SYSTEM",
+      description: "Designed and implemented a comprehensive POS system for VSU's local products, featuring real-time inventory tracking and an intuitive user interface for highly efficient sales management.",
       tags: ["React", "Electron", "SQLite"],
       tagClasses: ["tag-green", "tag-blue", "tag-darkgreen"],
       gradient: "linear-gradient(135deg, #2B694D, #0F5238)",
-      icon: "💼"
+      icon: "💼",
+      image: pcbmsImg
     },
     {
       id: 4,
