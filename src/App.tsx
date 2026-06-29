@@ -531,8 +531,8 @@ export default function App() {
             &copy; {new Date().getFullYear()} Keana Laraga. All rights reserved.
           </span>
           <div className="footer-links">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="badge-geist" id="link-github">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="badge-geist" id="link-linkedin">LinkedIn</a>
+            <a href="https://github.com/knsmnth" target="_blank" rel="noopener noreferrer" className="badge-geist" id="link-github">GitHub</a>
+            <a href="https://www.linkedin.com/in/keana-samantha-laraga-519189312" target="_blank" rel="noopener noreferrer" className="badge-geist" id="link-linkedin">LinkedIn</a>
           </div>
         </div>
       </footer>
